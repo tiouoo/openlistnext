@@ -18,6 +18,11 @@ VITE_API_URL = "/api"
 
 [[kv_namespaces]]
 binding = "OPENLISTNEXT_KV"
+id = "9b0cd005547d49d596d3f0fc50029cf7"
+
+[[routes]]
+pattern = "list.tiouo.cc/*"
+zone_name = "tiouo.cc"
 
 
 
