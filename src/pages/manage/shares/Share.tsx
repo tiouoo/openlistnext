@@ -36,7 +36,7 @@ function ShareOp(props: ShareProps) {
       <Button
         disabled={!props.canShare}
         onClick={() => {
-          to(`/@manage/shares/edit/${props.share.id}`)
+          to(`/manage/shares/edit/${props.share.id}`)
         }}
       >
         {t("global.edit")}
@@ -163,7 +163,7 @@ export function ShareListItem(props: ShareProps) {
               const pwd = props.share.pwd
                 ? `?pwd=${encodeURIComponent(props.share.pwd)}`
                 : ""
-              copy(`${base_url}/@s/${props.share.id}${pwd}`)
+              copy(`${base_url}/s/${props.share.id}${pwd}`)
             }}
           >
             {t("shares.copy_url")}

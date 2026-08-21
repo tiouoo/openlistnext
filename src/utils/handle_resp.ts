@@ -15,12 +15,12 @@ export const handleResp = <T>(
   } else {
     notify_error && notify.error(resp.message)
     if (auth && resp.code === 401) {
-      if (location.pathname === "/@manage") {
+      if (location.pathname === "/manage") {
         bus.emit("to", "/")
       } else {
         bus.emit(
           "to",
-          `/@login?redirect=${encodeURIComponent(location.pathname)}`,
+          `/login?redirect=${encodeURIComponent(location.pathname)}`,
         )
       }
       return

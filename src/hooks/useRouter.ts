@@ -18,7 +18,7 @@ const useRouter = () => {
     return trimBase(decodeURIComponent(location.pathname))
   })
   const isShare = createMemo(() => {
-    return pathname().startsWith("/@s")
+    return pathname().startsWith("/s")
   })
   return {
     to: (

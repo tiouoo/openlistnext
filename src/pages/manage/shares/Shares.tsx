@@ -55,7 +55,7 @@ const Shares = () => {
         <Show
           when={!canShare}
           fallback={
-            <Button onClick={() => to("/@manage/shares/add")}>
+            <Button onClick={() => to("/manage/shares/add")}>
               {t("global.add")}
             </Button>
           }

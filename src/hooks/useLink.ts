@@ -23,7 +23,7 @@ export const getLinkByDirAndObj = (
 ) => {
   if (type !== "preview")
     dir = isShare
-      ? dir.substring(3) /* remove /@s */
+      ? dir.substring(2) /* remove /s */
       : pathJoin(me().base_path, dir)
 
   dir = standardizePath(dir, true)
@@ -70,7 +70,7 @@ export const useLink = () => {
     let dir: string
     if (objStore.state === State.File) {
       dir = pathDir(pathname())
-      if (isShare() && dir === "/@s") {
+      if (isShare() && dir === "/s") {
         dir = pathname()
         obj = { ...obj, name: "" }
       }

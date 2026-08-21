@@ -19,7 +19,7 @@ fsRouter.post("/dirs", async (c) => {
   const reqPath = body.path || "/"
   try {
     // Share path support for completeness
-    if (reqPath.startsWith("/@s")) {
+    if (reqPath.startsWith("/s")) {
       const shareRes = await resolveShare(reqPath, body.password || "", c.env)
       if (!shareRes.ok) {
         return c.json({ code: 400, message: shareRes.error, data: null })
@@ -85,8 +85,8 @@ fsRouter.post("/list", async (c) => {
   const reqPath = body.path || "/"
 
   try {
-    // Share path: /@s/{shareId}/...
-    if (reqPath.startsWith("/@s")) {
+    // Share path: /s/{shareId}/...
+    if (reqPath.startsWith("/s")) {
       const shareRes = await resolveShare(reqPath, body.password || "", c.env)
       if (!shareRes.ok) {
         return c.json({ code: 400, message: shareRes.error, data: null })
@@ -211,8 +211,8 @@ fsRouter.post("/get", async (c) => {
   const body = await c.req.json().catch(() => ({}))
   const reqPath = body.path || "/"
   try {
-    // Share path: /@s/{shareId}/...
-    if (reqPath.startsWith("/@s")) {
+    // Share path: /s/{shareId}/...
+    if (reqPath.startsWith("/s")) {
       const shareRes = await resolveShare(reqPath, body.password || "", c.env)
       if (!shareRes.ok) {
         return c.json({ code: 400, message: shareRes.error, data: null })
@@ -246,7 +246,7 @@ fsRouter.post("/get", async (c) => {
       // Mapped to a real path — get with share-aware raw_url (/sd/{shareId}...)
       const shareId = reqPath.split("/").filter(Boolean)[1] || ""
       const { item, provider } = await getItem(shareRes.realPath!)
-      const subPath = reqPath.replace(/^\/@s\/[^/]+/, "")
+      const subPath = reqPath.replace(/^\/s\/[^/]+/, "")
       return c.json({
         code: 200,
         message: "success",

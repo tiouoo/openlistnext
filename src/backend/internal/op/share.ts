@@ -1,7 +1,7 @@
 import { getDb, saveDb } from "../model/db"
 
 /**
- * Share path resolution for /@s/{shareId}/... (frontend browsing)
+ * Share path resolution for /s/{shareId}/... (frontend browsing)
  * and /{shareId}/... (after stripping /sd prefix in raw downloads).
  */
 
@@ -24,7 +24,7 @@ const normalize = (p: string) =>
 
 /**
  * Resolve a share request path.
- * @param reqPath e.g. `/@s/abc`, `/@s/abc/sub`, or `/abc/sub` (already stripped /sd)
+ * @param reqPath e.g. `/s/abc`, `/s/abc/sub`, or `/abc/sub` (already stripped /sd)
  * @param password share password from frontend ("" if none)
  */
 export async function resolveShare(
@@ -38,10 +38,10 @@ export async function resolveShare(
     return { ok: false, error: "Invalid share path" }
   }
 
-  // Strip leading "@s" segment if present
+  // Strip leading "s" segment if present
   let shareId: string
   let rest: string[]
-  if (parts[0] === "@s") {
+  if (parts[0] === "s") {
     if (parts.length < 2) return { ok: false, error: "Invalid share path" }
     shareId = parts[1]
     rest = parts.slice(2)
@@ -98,10 +98,10 @@ export async function resolveShare(
   return { ok: true, share, realPath: real }
 }
 
-/** Extract the share id from a path like `/@s/abc/sub` or `/abc/sub` */
+/** Extract the share id from a path like `/s/abc/sub` or `/abc/sub` */
 export function extractShareId(reqPath: string): string | null {
   const parts = normalize(reqPath).split("/").filter(Boolean)
   if (parts.length === 0) return null
-  if (parts[0] === "@s") return parts[1] || null
+  if (parts[0] === "s") return parts[1] || null
   return parts[0]
 }

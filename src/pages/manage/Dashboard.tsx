@@ -277,21 +277,21 @@ const Dashboard = () => {
             <Button
               variant="outline"
               size="sm"
-              onClick={() => to("/@manage/settings/site")}
+              onClick={() => to("/manage/settings/site")}
             >
               站点设置
             </Button>
             <Button
               variant="outline"
               size="sm"
-              onClick={() => to("/@manage/storages")}
+              onClick={() => to("/manage/storages")}
             >
               存储管理
             </Button>
             <Button
               variant="outline"
               size="sm"
-              onClick={() => to("/@manage/users")}
+              onClick={() => to("/manage/users")}
             >
               用户管理
             </Button>
