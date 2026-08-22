@@ -56,14 +56,14 @@ const App: Component = () => {
             resp?.message || "unknown",
           )
           const defaultSettings = {
-            site_title: "OpenListNext",
+            site_title: "open list",
             logo: "/logo.png",
             favicon: "/favicon.png",
             announcement:
-              "欢迎使用 OpenListNext! (运行于 Serverless 离线 fallback 模式)",
+              "欢迎使用 open list! (运行于 Serverless 离线 fallback 模式)",
             main_color: "#1890ff",
             home_container: "hope_container",
-            home_icon: "openlistnext",
+            home_icon: "openlist",
             settings_layout: "simple",
             version: "v4.2.3",
           }
@@ -125,9 +125,9 @@ const App: Component = () => {
             <Route
               path="*"
               element={
-                <UserOrGuest>
+                <MustUser>
                   <Home />
-                </UserOrGuest>
+                </MustUser>
               }
             />
           </Routes>

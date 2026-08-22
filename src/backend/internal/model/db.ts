@@ -12,7 +12,7 @@ export const defaultDb = {
     },
     {
       key: "site_title",
-      value: "OpenListNext",
+      value: "open list",
       type: "string",
       help: "Site Title",
       group: 1,
@@ -95,7 +95,7 @@ export const defaultDb = {
     },
     {
       key: "home_icon",
-      value: "openlistnext",
+      value: "openlist",
       type: "string",
       help: "Home Icon Name",
       group: 2,
@@ -804,12 +804,12 @@ const LEGACY_SETTING_MIGRATIONS: Record<string, { from: any[]; to: string }> = {
     to: "/favicon.png",
   },
   site_title: {
-    from: ["OpenList"],
-    to: "OpenListNext",
+    from: ["OpenList", "OpenListNext"],
+    to: "open list",
   },
   home_icon: {
-    from: ["openlist", "oplist"],
-    to: "openlistnext",
+    from: ["openlist", "oplist", "openlistnext"],
+    to: "openlist",
   },
 }
 
