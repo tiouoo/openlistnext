@@ -2,12 +2,12 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "open list",
+  "name": "Tist",
   "icons": [
     {
-      "src": "/logo.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "https://cdn.tiouo.cc/standard/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ]
 }

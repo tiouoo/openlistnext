@@ -12,7 +12,7 @@ export const defaultDb = {
     },
     {
       key: "site_title",
-      value: "open list",
+      value: "Tist",
       type: "string",
       help: "Site Title",
       group: 1,
@@ -71,7 +71,7 @@ export const defaultDb = {
     // Group 2: STYLE (https://doc.oplist.org/configuration/style)
     {
       key: "logo",
-      value: "/logo.png",
+      value: "https://cdn.tiouo.cc/standard/logo.svg",
       type: "string",
       help: "Site Logo URL",
       group: 2,
@@ -79,7 +79,7 @@ export const defaultDb = {
     },
     {
       key: "favicon",
-      value: "/favicon.png",
+      value: "https://cdn.tiouo.cc/standard/logo.svg",
       type: "string",
       help: "Favicon URL",
       group: 2,
@@ -95,7 +95,7 @@ export const defaultDb = {
     },
     {
       key: "home_icon",
-      value: "openlist",
+      value: "tist",
       type: "string",
       help: "Home Icon Name",
       group: 2,
@@ -791,25 +791,25 @@ async function saveToKv(
 
 // 已知的旧默认值 → 当前默认值迁移表。
 // 修复「开发环境(无 KV，用新默认值)与生产环境(KV 里保存了旧默认值)不一致」：
-// 早期默认 logo/favicon 为空或 res.oplist.org 旧地址、site_title=OpenList、
+// 早期默认 logo/favicon 为空或 res.oplist.org 旧地址、site_title=OpenList/OpenListNext、
 // home_icon=openlist，品牌统一后默认值已更新，但已写入 KV 的旧值不会被
 // ensureDefaultSettings 的「仅补缺失 key」逻辑覆盖，导致 prod 显示旧图标/标题。
 const LEGACY_SETTING_MIGRATIONS: Record<string, { from: any[]; to: string }> = {
   logo: {
-    from: ["", "https://res.oplist.org/logo/logo.png"],
-    to: "/logo.png",
+    from: ["", "/logo.png", "https://res.oplist.org/logo/logo.png"],
+    to: "https://cdn.tiouo.cc/standard/logo.svg",
   },
   favicon: {
-    from: ["", "https://res.oplist.org/logo/logo.svg"],
-    to: "/favicon.png",
+    from: ["", "/favicon.png", "https://res.oplist.org/logo/logo.svg"],
+    to: "https://cdn.tiouo.cc/standard/logo.svg",
   },
   site_title: {
-    from: ["OpenList", "OpenListNext"],
-    to: "open list",
+    from: ["OpenList", "OpenListNext", "open list"],
+    to: "Tist",
   },
   home_icon: {
     from: ["openlist", "oplist", "openlistnext"],
-    to: "openlist",
+    to: "tist",
   },
 }
 

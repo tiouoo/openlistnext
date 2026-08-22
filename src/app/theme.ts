@@ -160,12 +160,19 @@ const theme: HopeThemeConfig = {
 }
 
 export const globalStyles = globalCss({
+  "@font-face": {
+    fontFamily: "Alimama",
+    src: `url("https://cdn.tiouo.cc/standard/alimama.ttf") format("truetype")`,
+    fontDisplay: "swap",
+    fontStyle: "normal",
+    fontWeight: 400,
+  },
   "*": {
     margin: 0,
     padding: 0,
   },
   html: {
-    fontFamily: `-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol" !important`,
+    fontFamily: `Alimama,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol" !important`,
   },
   "#root": {
     display: "flex",

@@ -65,7 +65,7 @@ export const Nav = () => {
           const href = encodePath(path)
           let text = () => name
           if (!isShare() && text() === "") {
-            text = () => getSetting("home_icon") + t("manage.sidemenu.home")
+            text = () => t("manage.sidemenu.home")
           } else if (isShare() && i() === 0) {
             text = () => getSetting("share_icon") + t("manage.sidemenu.shares")
           }

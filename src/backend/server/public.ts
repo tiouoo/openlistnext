@@ -10,8 +10,8 @@ publicRouter.get("/settings", async (c) => {
   // Source: internal/bootstrap/data/setting.go + internal/conf/const.go
   const settingsObj: Record<string, string> = {
     // --- Site ---
-    title: "OpenListNext Serverless",
-    site_title: "OpenListNext Serverless",
+    title: "Tist",
+    site_title: "Tist",
     version: "v4.2.3",
     announcement: "",
     pagination_type: "all",
@@ -21,8 +21,8 @@ publicRouter.get("/settings", async (c) => {
     robots_txt: "User-agent: *\nAllow: /",
 
     // --- Appearance ---
-    logo: "/logo.png",
-    favicon: "/favicon.png",
+    logo: "https://cdn.tiouo.cc/standard/logo.svg",
+    favicon: "https://cdn.tiouo.cc/standard/logo.svg",
     main_color: "#1890ff",
     hide_storage_details: "false",
     hide_storage_details_in_manage_page: "false",

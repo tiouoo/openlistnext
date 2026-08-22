@@ -56,14 +56,13 @@ const App: Component = () => {
             resp?.message || "unknown",
           )
           const defaultSettings = {
-            site_title: "open list",
-            logo: "/logo.png",
-            favicon: "/favicon.png",
-            announcement:
-              "欢迎使用 open list! (运行于 Serverless 离线 fallback 模式)",
+            site_title: "Tist",
+            logo: "https://cdn.tiouo.cc/standard/logo.svg",
+            favicon: "https://cdn.tiouo.cc/standard/logo.svg",
+            announcement: "欢迎使用 Tist!",
             main_color: "#1890ff",
             home_container: "hope_container",
-            home_icon: "openlist",
+            home_icon: "tist",
             settings_layout: "simple",
             version: "v4.2.3",
           }

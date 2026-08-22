@@ -1,4 +1,4 @@
-import { Anchor, HStack, VStack } from "@hope-ui/solid"
+import { Anchor, HStack, Text, VStack } from "@hope-ui/solid"
 import { Link } from "@solidjs/router"
 import { AnchorWithBase } from "~/components"
 import { useT } from "~/hooks"
@@ -9,11 +9,21 @@ export const Footer = () => {
   const t = useT()
   return (
     <VStack class="footer" w="$full" py="$4">
-      <HStack spacing="$1">
-        <Anchor href="https://github.com/OpenListTeam/OpenList" external>
+      <HStack spacing="$1" alignItems="center">
+        <Anchor href="https://github.com/tiouoo/openlistnext" external>
           {t("home.footer.powered_by")}
         </Anchor>
-        <span>|</span>
+        <Text
+          as="span"
+          css={{
+            display: "inline-flex",
+            alignItems: "center",
+            lineHeight: "1",
+            fontSize: "inherit",
+          }}
+        >
+          |
+        </Text>
         <AnchorWithBase
           as={Link}
           href={UserMethods.is_guest(me()) ? "/login" : "/manage"}
